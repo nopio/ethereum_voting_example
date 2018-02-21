@@ -1,0 +1,36 @@
+//
+// General
+// --------------------------------------------------
+
+html,
+body {
+    height: 100%;
+}
+
+//Alerts
+.notice,
+.alert {
+    margin: 0;
+    text-align: center;
+}
+
+//Navbar
+.navbar {
+    @extend .align-items-center;
+    & > div {
+        @extend .d-flex;
+        max-width: 1400px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+.navbar-brand {
+    @extend .d-flex;
+    @extend .align-items-center;
+}
+
+//Content
+#content {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}

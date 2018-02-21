@@ -1,0 +1,27 @@
+<% if current_user %>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div>
+      <a class="navbar-brand" href="/"><img class="mr-3" src="<%= image_url('nopio.svg') %>" alt="" width="130" height="50">Lunch vote</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mr-auto">
+           <li class='nav-item'>
+             <%= link_to 'Voting results', :votes, { class: 'nav-link' } %>
+           </li>
+           <li class='nav-item'>
+            <%= link_to 'Vote for lunch', :new_vote, { class: 'nav-link' } %>
+           </li>
+           <% if current_user.admin %>
+            <li class='nav-item'>
+              <%= link_to 'Create new voting', :new_admin_voting, { class: 'nav-link' } %>
+            </li>
+           <% end %>
+        </ul>
+       <%= link_to 'Sign out', :destroy_user_session, { class: 'nav-link', method: 'delete' } %>
+      </div>
+    </div>
+</nav>
+<% end %>

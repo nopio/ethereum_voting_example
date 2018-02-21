@@ -1,0 +1,20 @@
+//
+// Forms
+// --------------------------------------------------
+
+form {
+    .btn {
+        color: $white !important;
+    }
+    abbr[title] {
+        text-decoration: none;
+        color: $red;
+    }
+}
+.form-check {
+    input[type="checkbox"] {
+        position: absolute;
+        margin-top: .3rem;
+        margin-left: -1.25rem;
+    }
+}

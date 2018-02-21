@@ -1,0 +1,35 @@
+  <div class='panel'>
+    <h2 class="mb-4">Prepare voting</h2>
+    <%= simple_form_for :voting, url: :admin_voting, html: { id: 'voting_form' } do |f| %>
+      <%= f.hidden_field :private_key, { id: 'private_key' } %>
+      <div class='form-group'>
+        <div class='row'>
+          <div class='col-md-12'>
+            <%= f.label 'Meals to choice:' %>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-md-12'>
+            <%= f.collection_check_boxes :meals, @meals, :to_s, :to_s, { class: 'form-check-input', include_hidden: false, item_wrapper_class: 'form-check' } %>
+          </div>
+        </div>
+      </div>
+      <div class='form-group'>
+        <div class='row'>
+          <div class='col-md-12'>
+            <%= f.label 'Users took part:' %>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-md-12'>
+            <%= f.collection_check_boxes :users, @users, :id, :email, { class: 'form-check-input', include_hidden: false, item_wrapper_class: 'form-check' } %>
+          </div>
+        </div>
+      </div>
+      <div class='form-actions'>
+        <a class='btn btn-primary' data-toggle="modal" data-target="#modalForm">Save</a>
+      </div>
+    <% end %>
+  </div>
+
+  <%= render 'shared/modal', form: 'voting_form' %>

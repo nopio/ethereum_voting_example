@@ -1,0 +1,23 @@
+<div class='panel'>
+  <% if @meal_votes.present? %>
+    <h2 class="mb-4">Voting results:</h2>
+    <table class='table table-striped'>
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @meal_votes.each do |meal, vote| %>
+          <tr>
+            <td><%= meal %></td>
+            <td><%= vote %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <h2 class="mb-4">No votings!</h2>
+  <% end %>
+</div>

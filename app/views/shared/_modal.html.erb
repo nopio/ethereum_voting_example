@@ -1,0 +1,28 @@
+<div class="modal fade" id="modalForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-bold">Enter your private key!</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form">
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">Private key</label>
+                    <input type="password" id="modal_key" class="form-control validate">
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button onclick='submitForm(<%= form %>)' class="btn btn-primary">Accept</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function submitForm(form) {
+        document.getElementById('private_key').value = document.getElementById('modal_key').value;
+        form.submit();
+    }
+</script>

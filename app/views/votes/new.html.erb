@@ -1,0 +1,13 @@
+  <% if @meals_list.present? %>
+    <h2 class="mb-4"> Vote for lunch </h2>
+    <%= simple_form_for :votes, url: :votes, html: { id: 'vote_form' } do |f| %>
+      <%= f.collection_check_boxes :meals, @meals_list, :to_s, :to_s, { class: 'form-check-input', item_wrapper_class: 'form-check', include_hidden: false }%>
+      <%= f.hidden_field :private_key, { id: 'private_key' } %>
+     <div class='form-actions'>
+      <a class='btn btn-primary' data-toggle="modal" data-target="#modalForm">Vote</a>
+      </div>
+    <% end %>
+  <% else %>
+    <h2 class="mb-4">No votings!</h2>
+  <% end %>
+<%= render 'shared/modal', form: 'vote_form' %>
